@@ -1,0 +1,30 @@
+.container{
+    position: relative;
+    grid-area:3/4/5/8 ;
+    padding: 1rem 1rem;
+    background: white;
+}
+.container::before {
+    content: "followers";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translateY(-100%);
+    background: white;
+    color: grey;
+    border-top-right-radius: .25rem;
+    border-top-left-radius: .25rem;
+    text-transform: capitalize;
+    padding: 0.5rem 1rem 0px;
+    letter-spacing: .1 rem;
+    font-size: 1rem;
+}
+.user{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+}

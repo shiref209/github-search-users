@@ -1,0 +1,26 @@
+.container{
+    grid-area: 1/1/2/9;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+    text-align: center;
+    align-items: center;
+}
+.container p{
+    align-self: flex-end;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    width:40%;
+    height:3rem;
+    flex:2;
+}
+.search input{
+    flex:3;
+    border: none;
+}
+.search button{
+    height:3rem;
+}
