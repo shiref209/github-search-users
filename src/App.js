@@ -8,6 +8,7 @@ import InfoCard from './components/InfoCard';
 import User from './components/User';
 import Followers from './components/Followers';
 
+
 function App() {
   return (
           <div>

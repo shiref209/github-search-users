@@ -1,8 +1,11 @@
 import React from "react";
 import styles from './InfoCard.module.css'
 import {JournalCode,PeopleFill,PersonCheckFill,CodeSquare}from 'react-bootstrap-icons'
+import { useUserContext } from "../context/context";
 
 const InfoCard=()=>{
+    const data=useUserContext();
+    const {followers,following,gists,repos}=data;
 
     return <div className={styles.container}>
         <div className={styles.card}>
@@ -10,8 +13,8 @@ const InfoCard=()=>{
                 <JournalCode />
             </div>
             <div className={styles.text}>
-                <span>Text</span>
-                <span>100</span>
+                <span>Repos</span>
+                <span>{repos}</span>
             </div>
         </div>
          
@@ -20,8 +23,8 @@ const InfoCard=()=>{
                 <PeopleFill />
             </div>
             <div className={styles.text}>
-                <span>Text</span>
-                <span>100</span>
+                <span>Followers</span>
+                <span>{followers}</span>
             </div>
         </div>
 
@@ -30,8 +33,8 @@ const InfoCard=()=>{
                 <PersonCheckFill />
             </div>
             <div className={styles.text}>
-                <span>Text</span>
-                <span>100</span>
+                <span>Following</span>
+                <span>{following}</span>
             </div>
         </div>
 
@@ -40,8 +43,8 @@ const InfoCard=()=>{
                 <CodeSquare />
             </div>
             <div className={styles.text}>
-                <span>Text</span>
-                <span>100</span>
+                <span>Gists</span>
+                <span>{gists}</span>
             </div>
         </div>
     </div>

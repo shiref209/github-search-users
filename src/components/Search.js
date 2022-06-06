@@ -1,12 +1,19 @@
 import styles from './Search.module.css'
-import React from 'react';
+import React, { useRef } from 'react';
+import { useUserContext } from '../context/context';
 
 const Search=()=>{
-
+    const {state,searchUser}=useUserContext();
+    // const [userInput,setUserInput]=useState('');
+    const input=useRef('');
+    const getUser=()=>{
+        const searchInput=input.current.value;
+        searchUser(searchInput);
+    }
     return <div className={styles.container}>
         <div className={styles.search}>
-            <input type="search" placeholder='Enter Github User'/>
-            <button type='button'>Search</button>
+            <input ref={input} type="search" placeholder='Enter Github User'/>
+            <button onClick={getUser} type='button'>Search</button>
         </div>
         <p>Requests 56/60</p>
     </div>
