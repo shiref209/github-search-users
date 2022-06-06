@@ -3,12 +3,13 @@ import React, { useRef } from 'react';
 import { useUserContext } from '../context/context';
 
 const Search=()=>{
-    const {state,searchUser}=useUserContext();
+    const {state,searchUser,getRepos}=useUserContext();
     // const [userInput,setUserInput]=useState('');
     const input=useRef('');
     const getUser=()=>{
         const searchInput=input.current.value;
         searchUser(searchInput);
+        getRepos(searchInput)
     }
     return <div className={styles.container}>
         <div className={styles.search}>

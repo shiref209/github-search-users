@@ -7,6 +7,7 @@ import Card from './components/Card';
 import InfoCard from './components/InfoCard';
 import User from './components/User';
 import Followers from './components/Followers';
+import LanguagesChart from './charts/LanguagesChart';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
               <InfoCard/>
               <User/>
               <Followers/>
+              <LanguagesChart/>
             </Card>
             
           </div>

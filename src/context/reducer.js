@@ -19,6 +19,9 @@ const user_reducer=(state,action)=>{
     if (action.type==='GET_FOLLOWERS'){
         return {...state,followersList:action.payload}
     }
+    if (action.type==='GET_REPOS'){
+        return {...state,reposList:action.payload}
+    }
     return state
 }
 

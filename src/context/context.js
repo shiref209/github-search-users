@@ -18,21 +18,17 @@ const initialState={
     bio:'',
     link:'',
     company:'',
-    followersList:[]
+    followersList:[],
+    reposList:[]
 }
 const userContext=React.createContext()
 export const UserProvider=({children})=>{
     const [state,dispatch]=useReducer(reducer,initialState);
     const {login}=state;
-    console.log('login',login)
     const searchUser=async (user)=>{
         try {
             const {data}=await axios.get(`${url}${user}`);
-            dispatch({type:'GET_USER_DATA',payload:data})
-            console.log(data);
-            
-            
-            
+            dispatch({type:'GET_USER_DATA',payload:data});
         } catch (error) {
             dispatch({type:'USER_NOT_FOUND',payload:{...initialState}})
             console.log(error)
@@ -44,7 +40,7 @@ export const UserProvider=({children})=>{
         }
         try {
             const {data}=await axios.get(`${url}${login}/followers`);
-            console.log(data);
+            
             const followersList=await data.map((item,index)=>{
                 const requestedData={
                     name:item.login,
@@ -54,16 +50,28 @@ export const UserProvider=({children})=>{
                return {...requestedData}
                 
             })
-            console.log(followersList)
+            
             dispatch ({type:'GET_FOLLOWERS',payload:followersList})
         } catch (error) {
             console.log('followers',error)
         }
     }
+    const getRepos=async (login)=>{
+        if (!login){
+            return
+        }
+        try {
+            const {data}=await axios.get(`${url}${login}/repos?per_page=100`);
+            dispatch({type:'GET_REPOS',payload:data})
+            console.log(data)
+        } catch (error) {
+            console.log(error,'repos')
+        }
+    }
     // useEffect(()=>{
     //     getFollowers(login)
     // },[login])
-    return <userContext.Provider value={{...state,searchUser,getFollowers}}>{children}</userContext.Provider>
+    return <userContext.Provider value={{...state,searchUser,getFollowers,getRepos}}>{children}</userContext.Provider>
 }
 export const useUserContext=()=>{
     return useContext(userContext)
