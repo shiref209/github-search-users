@@ -48,10 +48,7 @@ const ChartExample=({data})=>{
           data
         }
       };
-    return (
-    <div style={{gridArea:'4/1/5/4'}}>
-        <ReactFC {...chartConfigs}  />
-    </div>);
+    return <ReactFC {...chartConfigs}  />;
 }
     
 export default ChartExample;

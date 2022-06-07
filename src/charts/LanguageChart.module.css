@@ -1,0 +1,7 @@
+.container{
+    grid-area: 4/1/6/6;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap:2rem;
+}

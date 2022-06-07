@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import React from 'react';
 import './App.css';
 import PageHero from './components/PageHero';
@@ -7,7 +7,7 @@ import Card from './components/Card';
 import InfoCard from './components/InfoCard';
 import User from './components/User';
 import Followers from './components/Followers';
-import LanguagesChart from './charts/LanguagesChart';
+import Repos from './charts/Repos';
 
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
               <InfoCard/>
               <User/>
               <Followers/>
-              <LanguagesChart/>
+              <Repos/>
             </Card>
             
           </div>
