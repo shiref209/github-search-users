@@ -17,8 +17,22 @@
 }
 .search input{
     flex:3;
-    border: none;
+    border-style: none;
+    text-indent: 1rem;
+    
+}
+*:focus{
+    outline: none;
 }
 .search button{
     height:3rem;
+    background-color: var(--clr-dark-contrast);
+    transition-duration: 1s;
+    border: none;
+    color: white;
 }
+.search button:hover {
+    background-color:var(--clr-text); 
+    border: 3px var(--clr-main);
+    cursor: pointer;
+  }

@@ -1,16 +1,16 @@
 .card{
-    background-color: white;
+    background: var(--clr-main);
     grid-area: 3/1/4/3;
     position: relative;
-    height:20rem;
+    
 }
-.card::before {
+.container::before {
     content: "user";
     position: absolute;
     top: 0px;
     left: 0px;
     transform: translateY(-100%);
-    background: white;
+    background: var(--clr-main);
     color: grey;
     border-top-right-radius: .25rem;
     border-top-left-radius: .25rem;
@@ -20,6 +20,7 @@
     font-size: 1rem;
 }
 .container{
+    height:20rem;
     display: flex;
     flex-direction: column;
     gap:1rem;

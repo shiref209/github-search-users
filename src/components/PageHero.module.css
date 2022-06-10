@@ -1,8 +1,8 @@
 .page{
-    background-color: white;
+    background-color: var(--clr-main);
     padding: 2rem 0;
     height: 5vh;
-    width: 100vw;
+    width: 120vw;
     position: fixed;
     display: flex;
     flex-direction: row;
@@ -22,10 +22,10 @@ img{
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
-p{
+.page p{
     align-self: center;
 }
-button {
+.page button {
     align-self: center;
     transition-duration: 0.4s;
     background-color: white;
@@ -33,6 +33,6 @@ button {
     cursor: pointer;
   }
   
-button:hover {
-    background-color:whitesmoke; /* Green */
+.page button:hover {
+    background-color:whitesmoke; 
   }

@@ -8,7 +8,6 @@ import Bar from "./Bar";
 
 const Repos=()=>{
     const {reposList}=useUserContext();
-    // if (reposList){
         const languages=reposList.reduce((total,item)=>{
             const {language,stargazers_count}=item;
             if (!language){
@@ -25,7 +24,6 @@ const Repos=()=>{
             }
             return total
         },{})
-        console.log(languages);
 
         const mostUsedLanguages=Object.values(languages).sort((a,b)=>{
             return b.value-a.value
@@ -33,10 +31,12 @@ const Repos=()=>{
         console.log(languages)
         // stars per language
         const languageStars=Object.values(languages).sort((a,b)=>{
-            return b.stars-a.stars
-        }).map((item)=>{return{...item,value:item.stars}})
-.slice(0,5)
-console.log('stars',languageStars)
+            return b.stars-a.stars})
+            .map((item)=>{
+                return{...item,value:item.stars}}
+                )
+            .slice(0,5)
+
 // forks and stars per repo
 let {stars,forks}=reposList.reduce((total,item)=>{
     const {name,stargazers_count,forks}=item;
@@ -49,8 +49,7 @@ let {stars,forks}=reposList.reduce((total,item)=>{
 })
 const mostStarred=Object.values(stars).sort((a,b)=>b.value-a.value).slice(0,5);
 const mostForked=Object.values(forks).sort((a,b)=>b.value-a.value).slice(0,5).reverse();
-console.log('stars',mostStarred)
-console.log('forks',mostForked)
+
         return <section className={styles.container}>
             <Doughnut data={languageStars}/>
             <ChartExample data={mostUsedLanguages}/>

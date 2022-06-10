@@ -1,18 +1,15 @@
 .container{
     position: relative;
     grid-area:3/3/5/6 ;
-    padding: 1rem 1rem;
-    background: white;
-    height:20rem;
-    
+
 }
-.container::before {
+.list::before {
     content: "followers";
     position: absolute;
     top: 0px;
     left: 0px;
     transform: translateY(-100%);
-    background: white;
+    background: var(--clr-main);
     color: grey;
     border-top-right-radius: .25rem;
     border-top-left-radius: .25rem;
@@ -27,6 +24,9 @@
     gap:1rem;
     overflow: auto;
     height:20rem;
+    padding: 1rem 1rem;
+    background: var(--clr-main);
+    max-width: 40vw;
 }
 .user{
     display: flex;

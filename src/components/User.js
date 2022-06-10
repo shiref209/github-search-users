@@ -49,7 +49,7 @@ const User=()=>{
         </div> 
         
         :
-        <p className={styles.error}>User Not Found, please check your Search...</p> }
+        null }
 </div>
 }
 
