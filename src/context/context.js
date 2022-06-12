@@ -1,4 +1,4 @@
-import React,{useContext, useEffect,useReducer} from "react";
+import React,{useContext,useReducer} from "react";
 import reducer from './reducer'
 import axios from 'axios'
 
@@ -24,14 +24,12 @@ const initialState={
 const userContext=React.createContext()
 export const UserProvider=({children})=>{
     const [state,dispatch]=useReducer(reducer,initialState);
-    const {login}=state;
     const searchUser=async (user)=>{
         try {
             const {data}=await axios.get(`${url}${user}`);
             dispatch({type:'GET_USER_DATA',payload:data});
         } catch (error) {
             dispatch({type:'USER_NOT_FOUND',payload:{...initialState}})
-            console.log(error)
         }
     }
     const getFollowers=async (login)=>{
@@ -53,7 +51,6 @@ export const UserProvider=({children})=>{
             
             dispatch ({type:'GET_FOLLOWERS',payload:followersList})
         } catch (error) {
-            console.log('followers',error)
         }
     }
     const getRepos=async (login)=>{
@@ -63,9 +60,8 @@ export const UserProvider=({children})=>{
         try {
             const {data}=await axios.get(`${url}${login}/repos?per_page=100`);
             dispatch({type:'GET_REPOS',payload:data})
-            console.log(data)
         } catch (error) {
-            console.log(error,'repos')
+
         }
     }
     // useEffect(()=>{

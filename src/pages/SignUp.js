@@ -3,9 +3,6 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-// import Link from '@mui/material/Link';
 import {Link, useNavigate} from 'react-router-dom';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -93,6 +90,8 @@ export default function SignUp() {
                   autoComplete="new-password"
                 />
               </Grid>
+              {!isValid && <p style={{color:'red',paddingLeft:'16px'}}>Please enter a valid email and password</p>}
+              {error && <p style={{color:'red',paddingLeft:'16px'}}>invalid email or password...</p>}
             </Grid>
             <Button
               type="submit"

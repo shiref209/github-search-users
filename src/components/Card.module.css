@@ -6,4 +6,15 @@
     grid-template-rows: repeat(auto-fill, minmax(186px, 1fr));
     grid-column-gap: 2rem;
     grid-row-gap: 5rem;
+    /* max-width: 95%; */
 }
+@media only screen and (max-width: 600px) {
+    .container {
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     gap:2rem;
+     margin:0;
+     /* max-width: 95%; */
+    }
+  }

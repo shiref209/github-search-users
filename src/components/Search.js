@@ -3,8 +3,7 @@ import React, { useRef } from 'react';
 import { useUserContext } from '../context/context';
 
 const Search=()=>{
-    const {state,searchUser,getRepos}=useUserContext();
-    // const [userInput,setUserInput]=useState('');
+    const {searchUser,getRepos}=useUserContext();
     const input=useRef('');
     const getUser=()=>{
         const searchInput=input.current.value;
@@ -16,7 +15,6 @@ const Search=()=>{
             <input ref={input} type="search" placeholder='Enter Github User'/>
             <button onClick={getUser} type='button'>Search</button>
         </div>
-        <p>Requests 56/60</p>
     </div>
 }
 

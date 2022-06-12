@@ -4,7 +4,8 @@
   --clr-background:#F8F5F4;
   --clr-contrast:#85CEA7;
   --clr-dark-contrast:#7FA3D8;
-  --clr-text:#8960ED
+  --clr-text:#8960ED;
+  --clr-text2:#023047;
 }
 
 body {
@@ -17,6 +18,9 @@ body {
   background-color:darkgrey;
   cursor: default;
   background-color: var(--clr-background);
+}
+body span{
+  font-size: 15px;
 }
 
 code {

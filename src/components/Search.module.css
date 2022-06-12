@@ -1,17 +1,12 @@
 .container{
     grid-area: 1/1/2/7;
     padding-top: 10rem;
-    display: flex;
-    flex-direction: row;
-    gap:2rem;
-    text-align: center;
-    align-items: center;
+    max-width: 95%;
 }
 
 .search{
     display: flex;
     flex-direction: row;
-    width:40%;
     height:3rem;
     flex:2;
 }
@@ -19,7 +14,7 @@
     flex:3;
     border-style: none;
     text-indent: 1rem;
-    
+    font-size: 15px;
 }
 *:focus{
     outline: none;
@@ -35,4 +30,18 @@
     background-color:var(--clr-text); 
     border: 3px var(--clr-main);
     cursor: pointer;
+  }
+.container p{
+    font-weight: 500;
+    color: var(--clr-text2);
+}
+  @media only screen and (max-width: 600px) {
+    .container{
+        padding: 8rem 1rem 0 1rem;
+        max-width: 90%;
+    }
+    input{
+        font-size: 10px;
+    }
+    
   }

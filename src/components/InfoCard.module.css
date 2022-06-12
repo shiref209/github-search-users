@@ -17,7 +17,26 @@
     width: 20%;
     height: 5rem;
     justify-self: stretch;
+    transition: all .2s ease-in-out; 
+    font-weight: 500;
 }
+.card:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.pink{
+    background-color: #ffc8dd;
+    color:var(--clr-text2);
+}
+.purple{
+    color:var(--clr-background);
+    background-color:#AEC0EA ;
+}
+
 
 .icon{
     content: '';
@@ -44,3 +63,15 @@
     padding: 0rem;
     
 }
+
+@media only screen and (max-width: 600px) {
+    .container{
+        padding:0 1rem;
+        max-width: 90%;
+    }
+    .card{
+        width:45%;
+        
+    }
+    
+  }

@@ -4,4 +4,27 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap:2rem;
+    color: var(--clr-text);
 }
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin:1rem 1rem 0 1rem;
+        max-width: 100%;
+        
+    }
+    .container div {
+        width: 100% !important;
+      }
+    .container div span {
+        width: 90vw !important;
+      }
+     .container svg {
+        width: 90vw !important;
+        border-radius: 0.25rem !important;
+        -webkit-border-radius: 0.25rem !important;
+        -moz-border-radius: 0.25rem !important;
+        -ms-border-radius: 0.25rem !important;
+        -o-border-radius: 0.25rem !important;
+}
+  }

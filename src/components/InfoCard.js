@@ -8,7 +8,7 @@ const InfoCard=()=>{
     const {followers,following,gists,repos}=data;
 
     return <div className={styles.container}>
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.pink}`}>
             <div className={styles.icon}>
                 <JournalCode />
             </div>
@@ -18,7 +18,7 @@ const InfoCard=()=>{
             </div>
         </div>
          
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.purple}`}>
             <div className={styles.icon}>
                 <PeopleFill />
             </div>
@@ -28,7 +28,7 @@ const InfoCard=()=>{
             </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.pink}`}>
             <div className={styles.icon}>
                 <PersonCheckFill />
             </div>
@@ -38,7 +38,7 @@ const InfoCard=()=>{
             </div>
         </div>
 
-        <div className={styles.card}>
+        <div className={`${styles.card} ${styles.purple}`}>
             <div className={styles.icon}>
                 <CodeSquare />
             </div>
