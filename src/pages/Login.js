@@ -40,7 +40,6 @@ export default function Login() {
       // Create a new user with email and password using firebase
         signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
-            console.log(res.user);
             const {email}=res.user;
             localStorage.setItem('user',email);
             navigate('/');
