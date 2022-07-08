@@ -12,7 +12,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import auth from '../auth/auth'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 const theme = createTheme();
 
@@ -38,14 +38,22 @@ export default function Form(props) {
       }
     
     if(isValid) {
-      // Create a new user with email and password using firebase
-        signInWithEmailAndPassword(auth, email, password)
+      // Handling sing-in/sign-up
+        name==="Login"?signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
             const {email}=res.user;
             localStorage.setItem('user',email);
             navigate('/');
           })
         .catch(err => setError(err.message))
+        :
+        createUserWithEmailAndPassword(auth,email,password)
+        .then((res) => {
+          const {email}=res.user;
+          localStorage.setItem('user',email);
+          navigate('/');
+        })
+      .catch(err => setError(err.message))
     }
 
   };
