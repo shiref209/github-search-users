@@ -1,7 +1,7 @@
 {
   "name": "github",
   "version": "0.1.0",
-  "homepage": "https://shiref209.github.io/github-search-users",
+ 
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
