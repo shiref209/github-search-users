@@ -16,7 +16,7 @@ const Card=()=>{
               <InfoCard/>
               <User/>
               <Followers/>
-              {reposList.length>0 && <Repos/>}
+              {/* {reposList.length>0 && <Repos/>} */}
     </div>
 }
 
